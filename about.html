@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | RGPV Notes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #6a85b6, #bac8e0, #e8efff);
+      background-size: 400% 400%;
+      animation: bgAnimation 12s ease infinite;
+      font-family: Arial, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    @keyframes bgAnimation {
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .team img {
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .team img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">RGPV Notes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>About RGPV Notes</h1>
+      <p>Providing high-quality Computer Science notes, PDFs, and previous year questions for students.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Who We Are</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="rgpv notes logo.png" class="img-fluid rounded" alt="About Image">
+      </div>
+      <div class="col-md-6">
+        <p>RGPV Notes is dedicated to helping Computer Science students succeed. We provide handwritten notes, PDFs, and
+          previous year questions to make learning easier and accessible for everyone.</p>
+        <p>Our mission is to give students a single platform for all study materials, covering all semesters and topics
+          with carefully curated content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Our Team</h2>
+    <div class="row text-center team">
+      <div class="col-md-4 mb-4">
+        <img src="https://source.unsplash.com/150x150/?person" alt="Rohit" class="mb-2">
+        <h5>Rohit Dhakar</h5>
+        <p>Founder & Developer</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="https://source.unsplash.com/150x150/?student" alt="krishna" class="mb-2">
+        <h5>krishna Dhakar</h5>
+        <p>Content Specialist</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <img src="https://source.unsplash.com/150x150/?teacher" alt="Shrikant" class="mb-2">
+        <h5>Shrikant Dhakar</h5>
+        <p>Designer</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-3">
+    <div class="container text-center">&copy; 2025 RGPV Notes. All Rights Reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
