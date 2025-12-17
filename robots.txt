@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rgpvnoteshubin.netlify.app/sitemap.xml
+Sitemap: https://rgpvcsenotes.netlify.app/sitemap.xml
