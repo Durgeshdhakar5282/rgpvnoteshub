@@ -6,29 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RGPV B.Tech Computer Science Handwritten Notes (1st–8th Sem) | PDFs & PYQs</title>
 
-  <!-- Meta Description & Keywords -->
   <meta name="description" content="Download RGPV B.Tech Computer Science handwritten notes, PDFs, syllabus, PYQs and mid-sem papers for 1st to 8th semester. Free study material for RGPV students.">
   <meta name="keywords" content="rgpv notes, rgpv btech cs notes, rgpv handwritten notes, rgpv computer science pdf, rgpv pyqs, rgpv syllabus">
   <meta name="robots" content="index, follow">
   <meta name="author" content="RGPV Notes">
 
-  <!-- Canonical -->
   <link rel="canonical" href="https://rgpvcsenotes.netlify.app/">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="RGPV B.Tech Computer Science Handwritten Notes">
   <meta property="og:description" content="Free handwritten notes, PDFs and PYQs for RGPV CS students (1st–8th Semester).">
   <meta property="og:url" content="https://rgpvcsenotes.netlify.app/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://rgpvcsenotes.netlify.app/d1.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
 
   <link rel="icon" type="image/x-icon" href="RGPVLOGO.jpeg">
 
-  <!-- Preload CSS for faster render -->
-  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" onload="this.rel='stylesheet'">
-  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" onload="this.rel='stylesheet'">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <style>
     body {
@@ -37,6 +31,7 @@
       animation: bgAnimation 12s ease infinite;
       position: relative;
       background-attachment: fixed;
+      min-height: 100vh;
     }
 
     body::before {
@@ -49,6 +44,7 @@
       background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
       opacity: 0.15;
       pointer-events: none;
+      z-index: -1;
     }
 
     @keyframes bgAnimation {
@@ -57,10 +53,42 @@
       100% { background-position: 0% 50%; }
     }
 
-    .carousel-item img { width: 100%; height: auto; object-fit: cover; }
-    .card { border: none; border-radius: 12px; transition: all 0.4s ease; overflow: hidden; background: white; }
-    .card img { transition: transform 0.5s ease; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0, 150, 200, 0.35); background: linear-gradient(135deg, #dff6ff, #bde6f6); }
+    /* Carousel Height Fixing */
+    .carousel {
+      min-height: 250px;
+      background: #ccc;
+    }
+    
+    .carousel-item img { 
+      width: 100%; 
+      height: auto; 
+      aspect-ratio: 1200 / 400; /* Space reservation */
+      object-fit: cover; 
+    }
+
+    /* Card Image Aspect Ratio Fix */
+    .card { 
+      border: none; 
+      border-radius: 12px; 
+      transition: all 0.4s ease; 
+      overflow: hidden; 
+      background: white; 
+    }
+
+    .card img { 
+      transition: transform 0.5s ease; 
+      aspect-ratio: 400 / 250; /* Image loading se pehle jagah reserve rakhega */
+      background-color: #f0f0f0; 
+      width: 100%;
+      height: auto;
+    }
+
+    .card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 15px 35px rgba(0, 150, 200, 0.35); 
+      background: linear-gradient(135deg, #dff6ff, #bde6f6); 
+    }
+
     .card:hover img { transform: scale(1.1); }
   </style>
 
@@ -74,12 +102,10 @@
     "educationalLevel": "Undergraduate"
   }
   </script>
-
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">RGPV Notes</a>
@@ -116,7 +142,6 @@
   </nav>
 
   <main>
-    <!-- CAROUSEL -->
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
@@ -124,47 +149,27 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
       </div>
       <div class="carousel-inner">
-        <!-- Carousel 1 -->
         <div class="carousel-item active">
           <picture>
             <source srcset="d1.webp" type="image/webp">
-            <source srcset="d1.jpg" type="image/jpeg">
-            <img src="d1.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner" style="width:100%;height:auto;">
+            <img src="d1.jpg" width="1200" height="400" fetchpriority="high" alt="RGPV Notes Banner">
           </picture>
           <div class="carousel-caption d-none d-md-block">
             <h2>Download RGPV Computer Science Handwritten Notes</h2>
             <a class="btn btn-primary" href="/">Get Started</a>
-            <a class="btn btn-success" href="https://drive.google.com/drive/folders/1V-Jpg0Eg8mRndUfRzEFf76o9N1oufRTz">Explore Notes</a>
-            <a class="btn btn-danger" href="/">Learn More</a>
           </div>
         </div>
-        <!-- Carousel 2 -->
         <div class="carousel-item">
           <picture>
             <source srcset="d2.webp" type="image/webp">
-            <source srcset="d2.jpg" type="image/jpeg">
-            <img src="d2.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner" style="width:100%;height:auto;">
+            <img src="d2.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner">
           </picture>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Download RGPV Computer Science Handwritten Notes</h2>
-            <a class="btn btn-primary" href="/">Get Started</a>
-            <a class="btn btn-success" href="https://drive.google.com/drive/folders/1V-Jpg0Eg8mRndUfRzEFf76o9N1oufRTz">Explore Notes</a>
-            <a class="btn btn-danger" href="/">Learn More</a>
-          </div>
         </div>
-        <!-- Carousel 3 -->
         <div class="carousel-item">
           <picture>
             <source srcset="d3.webp" type="image/webp">
-            <source srcset="d3.jpg" type="image/jpeg">
-            <img src="d3.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner" style="width:100%;height:auto;">
+            <img src="d3.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner">
           </picture>
-          <div class="carousel-caption d-none d-md-block">
-            <h2>Download RGPV Computer Science Handwritten Notes</h2>
-            <a class="btn btn-primary" href="/">Get Started</a>
-            <a class="btn btn-success" href="https://drive.google.com/drive/folders/1V-Jpg0Eg8mRndUfRzEFf76o9N1oufRTz">Explore Notes</a>
-            <a class="btn btn-danger" href="/">Learn More</a>
-          </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -175,7 +180,6 @@
       </button>
     </div>
 
-    <!-- 3 CARDS SECTION -->
     <div class="container my-5">
       <div class="row g-4">
 
@@ -183,11 +187,10 @@
           <div class="card h-100">
             <picture>
               <source srcset="card1.webp" type="image/webp">
-              <source srcset="card1.jpg" type="image/jpeg">
-              <img src="card1.jpg" width="400" height="250" loading="lazy" alt="RGPV First Year Computer Science Handwritten Notes" style="width:100%;height:auto;">
+              <img src="card1.jpg" width="400" height="250" loading="lazy" alt="RGPV First Year Notes">
             </picture>
             <div class="card-body">
-              <h5 class="card-title"> First Year </h5>
+              <h5 class="card-title">First Year</h5>
               <p class="card-text">Get Handwritten notes, PDFs and PYQs.</p>
               <ul>
                 <li>Mid Sem papers</li>
@@ -202,8 +205,7 @@
           <div class="card h-100">
             <picture>
               <source srcset="card2.webp" type="image/webp">
-              <source srcset="card2.jpg" type="image/jpeg">
-              <img src="card2.jpg" width="400" height="250" loading="lazy" alt="RGPV Second Year Computer Science Handwritten Notes" style="width:100%;height:auto;">
+              <img src="card2.jpg" width="400" height="250" loading="lazy" alt="RGPV Second Year Notes">
             </picture>
             <div class="card-body">
               <h5 class="card-title">Second Year</h5>
@@ -221,8 +223,7 @@
           <div class="card h-100">
             <picture>
               <source srcset="card3.webp" type="image/webp">
-              <source srcset="card3.jpg" type="image/jpeg">
-              <img src="card3.jpg" width="400" height="250" loading="lazy" alt="RGPV third Year Computer Science Handwritten Notes" style="width:100%;height:auto;">
+              <img src="card3.jpg" width="400" height="250" loading="lazy" alt="RGPV Third Year Notes">
             </picture>
             <div class="card-body">
               <h5 class="card-title">Third Year</h5>
@@ -238,18 +239,9 @@
 
       </div>
     </div>
-
-    <!-- LOGIN & SIGNUP MODALS (Same as original, no changes) -->
-    ...
   </main>
 
-  <!-- FOOTER (Same as original) -->
-  ...
-
-  <!-- Optimized Bootstrap JS (Defer) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
-
