@@ -31,7 +31,7 @@
       animation: bgAnimation 12s ease infinite;
       position: relative;
       background-attachment: fixed;
-      min-height: 100vh;
+      min-height: 100vh; /* Prevents shift on short pages */
     }
 
     body::before {
@@ -53,42 +53,31 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Carousel Height Fixing */
+    /* Reserve space for carousel to prevent pushing down cards */
     .carousel {
-      min-height: 250px;
-      background: #ccc;
+      min-height: 300px; 
+      background: #f0f0f0;
     }
-    
+
     .carousel-item img { 
       width: 100%; 
       height: auto; 
-      aspect-ratio: 1200 / 400; /* Space reservation */
+      aspect-ratio: 1200 / 400; /* LOCKS THE HEIGHT BEFORE IMAGE LOADS */
       object-fit: cover; 
     }
 
-    /* Card Image Aspect Ratio Fix */
-    .card { 
-      border: none; 
-      border-radius: 12px; 
-      transition: all 0.4s ease; 
-      overflow: hidden; 
-      background: white; 
-    }
-
+    /* Fixed Aspect Ratio for Cards */
+    .card { border: none; border-radius: 12px; transition: all 0.4s ease; overflow: hidden; background: white; }
+    
     .card img { 
       transition: transform 0.5s ease; 
-      aspect-ratio: 400 / 250; /* Image loading se pehle jagah reserve rakhega */
-      background-color: #f0f0f0; 
+      aspect-ratio: 400 / 250; /* PREVENTS TEXT JUMPING */
       width: 100%;
       height: auto;
+      background-color: #eee;
     }
 
-    .card:hover { 
-      transform: translateY(-10px); 
-      box-shadow: 0 15px 35px rgba(0, 150, 200, 0.35); 
-      background: linear-gradient(135deg, #dff6ff, #bde6f6); 
-    }
-
+    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0, 150, 200, 0.35); background: linear-gradient(135deg, #dff6ff, #bde6f6); }
     .card:hover img { transform: scale(1.1); }
   </style>
 
@@ -122,32 +111,19 @@
               <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1oaETqLdFkSsW-StFVhSWkLUFIuXl7Wy-">1st Semester</a></li>
               <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1ujTdPV4xB8kfpFQyWrg0cXeJ0Yztp7am">2nd Semester</a></li>
               <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1isJ6dIH9zfv-U7Ltz_nbiqkcPctPR3en">3rd Semester</a></li>
-              <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1tXnMj6daoM9AQ63v-t-5L3jhJX-nU-GN">4th Semester</a></li>
-              <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1GtPKosUkqE6hPpZC1TiFO7r3AgMw85JY">5th Semester</a></li>
-              <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/16bQYnKQy7XZwI2rBdotSg9ZmPZo8VRxG">6th Semester</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search">
           <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
-        <div class="mx-2">
-          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-          <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
-        </div>
       </div>
     </div>
   </nav>
 
   <main>
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
-      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <picture>
@@ -165,19 +141,7 @@
             <img src="d2.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner">
           </picture>
         </div>
-        <div class="carousel-item">
-          <picture>
-            <source srcset="d3.webp" type="image/webp">
-            <img src="d3.jpg" width="1200" height="400" loading="lazy" alt="RGPV Notes Banner">
-          </picture>
-        </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
     </div>
 
     <div class="container my-5">
@@ -192,10 +156,6 @@
             <div class="card-body">
               <h5 class="card-title">First Year</h5>
               <p class="card-text">Get Handwritten notes, PDFs and PYQs.</p>
-              <ul>
-                <li>Mid Sem papers</li>
-                <li>Previous Year Questions</li>
-              </ul>
               <a href="https://drive.google.com/drive/folders/1rnN6vEcUBQ3FuwgNJYgrSbylSZzrTQEC" class="btn btn-dark">View Details</a>
             </div>
           </div>
@@ -210,29 +170,7 @@
             <div class="card-body">
               <h5 class="card-title">Second Year</h5>
               <p class="card-text">Get Handwritten notes, PDFs and PYQs.</p>
-              <ul>
-                <li>Mid Sem papers</li>
-                <li>Previous Year Questions</li>
-              </ul>
               <a href="https://drive.google.com/drive/folders/1Ltda8GZGT3v64nJqMfSgOhRQK1oir-b0" class="btn btn-dark">View details</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100">
-            <picture>
-              <source srcset="card3.webp" type="image/webp">
-              <img src="card3.jpg" width="400" height="250" loading="lazy" alt="RGPV Third Year Notes">
-            </picture>
-            <div class="card-body">
-              <h5 class="card-title">Third Year</h5>
-              <p class="card-text">Get Handwritten notes, PDFs and PYQs.</p>
-              <ul>
-                <li>Mid Sem papers</li>
-                <li>Previous Year Questions</li>
-              </ul>
-              <a href="https://drive.google.com/drive/folders/1wbu6nNSgkVug6PQWjytgTuqIujvdEZS6" class="btn btn-dark">View details</a>
             </div>
           </div>
         </div>
