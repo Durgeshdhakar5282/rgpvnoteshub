@@ -3,7 +3,7 @@
       background-size: 400% 400%;
       animation: bgAnimation 12s ease infinite;
       position: relative;
-      background-attachment: fixed;
+      /* background-attachment: fixed; */
     }
 
     body::before {
@@ -40,6 +40,11 @@
       width: 100%;
     }
 
+.carousel-caption {
+  min-height: 150px;
+}
+
+
     /* Card Hover Sea Effect */
     .card {
       border: none;
@@ -52,12 +57,17 @@
     .card img {
       transition: transform 0.5s ease;
     }
-    
-    .card-img-top {
+
+.card-img-top {
   width: 100%;
   height: auto;
-  aspect-ratio: 800 / 706;
+  aspect-ratio: 400 / 353; /* EXACT ratio */
   object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  min-height: 230px;
 }
 
     .card:hover {
